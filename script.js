@@ -30,7 +30,7 @@ function getHumanChoice(){
     let humanChoice;
     
     while (true) {
-        input = prompt("What's your choice?");
+        input = prompt("What's your choice?", "rock, paper, or scissors");
         humanChoice = input.toLowerCase();
 
         if (humanChoice === 'rock' || humanChoice === 'paper' || humanChoice === 'scissors') {
@@ -42,10 +42,42 @@ function getHumanChoice(){
     return humanChoice;
 }
 
-let computerResult = getComputerChoice();
-console.log("Computer's choice: ");
-console.log(computerResult);
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-let humanResult = getHumanChoice();
-console.log("Human's choice: ");
-console.log(humanResult);
+playRound(humanSelection, computerSelection);
+
+function playRound(humanChoice, computerChoice) {
+    
+    if (humanChoice === computerChoice) {
+        console.log("It's a draw!");
+        return
+    } else {
+        if (humanChoice === 'rock' && computerChoice === 'scissors'){
+            console.log('You win!');
+            humanScore += 1;
+        } else if (humanChoice === 'rock' && computerChoice === 'paper') {
+            console.log('Computer wins!');
+            computerScore += 1;
+        } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
+            console.log('Computer wins!');
+            computerScore += 1;
+        } else if (humanChoice === 'paper' && computerChoice === 'rock') {
+            console.log('You win!');
+            humanScore += 1;
+        } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
+            console.log('Computer wins!');
+            computerScore += 1;
+        } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+            console.log('You win!');
+            humanScore += 1;
+        }
+    }
+
+    console.log("Human score: ");
+    console.log(humanChoice);
+    console.log(humanScore);
+    console.log("Computer score: ");
+    console.log(computerChoice);
+    console.log(computerScore);
+}
