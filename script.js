@@ -68,12 +68,6 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 
-    // console.log("Human score: ");
-    // console.log(humanChoice);
-    // console.log(humanScoreRound);
-    // console.log("Computer score: ");
-    // console.log(computerChoice);
-    // console.log(computerScoreRound);
 
     return {humanScoreRound, computerScoreRound};
 }
@@ -113,7 +107,7 @@ function playGame(){
         humanScore += hS;
         computerScore += cS
 
-        // decrease the number of rounds
+        // decrease the rounds number
         rounds -= 1;
     }
 
