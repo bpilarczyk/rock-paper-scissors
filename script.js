@@ -24,8 +24,9 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    // let input = prompt("What's your choice?");
+    // Declare variable to store input
     let input;
+    // Declare variable to store the result
     let humanChoice;
     
     while (true) {
